@@ -39,18 +39,35 @@ console.log('4:', Array.from(new Set(array)));
 // 5. Merge two arrays, also remove duplicates
 const array1 = ['A', 'B', 'F', 'C', 'B']; 
 const array2 = ['A', 'D', 'E', 'D', 'F']; 
+const array3 = array1.concat(array2);
 
-console.log('5', );
+console.log('5', [... new Set(array3)]);
 
 // 6. Write function to remove. 'null', '0', '""', 'false', 'undefined' and 'NaN' values from an array.
+const removeBadValues = (array) => {
+    return array.filter(item => item !== null && 
+                                item !== 0 && 
+                                item !== '' && 
+                                item !== false && 
+                                item !== undefined &&
+                                item !== NaN);
+}
 
-console.log('6: ', yourFuncName([10, null, -12, false, undefined, '', 0, 234]));
+console.log('6: ', removeBadValues([10, null, -12, false, undefined, '', 0, 234]));
 
 // 7. Get random item from array
+const getRandom = (array) => {
+    const ARRAY_LENGTH = array.length;
+    const randomIndex = parseInt(Math.random() * ARRAY_LENGTH);
+    return array[randomIndex];
+}
+
 console.log('7:', getRandom([10, 22, 'Super', null, undefined, 0, false, 111]));
 
 // 8. Sort the array in the ascending order
-
+const sort = (array) => {
+    return array.sort((a, b) => a - b);
+}
 console.log('8: ', sort([11, 21, 13, 88, 2, 4, 77]));
 
 /** 9. Get sorted array from 8 task, and write function, that creates object: 
@@ -59,5 +76,18 @@ console.log('8: ', sort([11, 21, 13, 88, 2, 4, 77]));
  *     odd: [11, 21, 13, 77]
  * }
  *  */ 
-
-console.log('9: ',  yourFuncName(***));
+const divideIntoEvenOdd = (array) => {
+    const resultObject = {
+             even: [],
+             odd: []
+    };
+    array.forEach(item => {
+        if (item % 2 > 0) {
+            resultObject.odd.push(item);
+        } else {
+            resultObject.even.push(item);
+        }
+    });
+    return resultObject;
+}
+console.log('9: ',  divideIntoEvenOdd([11, 21, 13, 88, 2, 4, 77]));
