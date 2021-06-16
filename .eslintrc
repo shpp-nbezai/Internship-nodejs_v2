@@ -8,6 +8,8 @@
         "indent": ["error", 4],
         "strict": 0,
         "no-var": "error",
-        "no-console": 0
+        "no-console": 0,
+        "max-len": ["error", { "code": 120 }],
+        "one-var-declaration-per-line": ["error", "initializations"],
     }
 }
