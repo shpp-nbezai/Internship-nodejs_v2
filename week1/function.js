@@ -76,7 +76,7 @@ console.log(myMultiply(23));
  * HINT: read about callbacks
  */
 
-function yourFuncName(options, callback) {
+function incrementObjectValues(options, callback) {
     for(key in options) {
         options[key]++;
     }
@@ -84,4 +84,4 @@ function yourFuncName(options, callback) {
         callback(options);
     }, 2000);
 }
-yourFuncName({ a: 1, b: 2}, (data) => { console.log(data) });
+incrementObjectValues({ a: 1, b: 2}, (data) => { console.log(data) });
