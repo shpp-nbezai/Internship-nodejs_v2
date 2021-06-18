@@ -1,27 +1,35 @@
 // 0. Create function that will accept (10, 20) params and return their sum.
 // Main goal - use all possible variants to declare functions
-function mySum() {
-    const args = [...arguments];
-    let result = 0;
-
-    args.forEach(item => {
-        result += item;
-    });
-    return result;
+function mySum(firstNumber, secondNumber) {
+    return firstNumber + secondNumber;
 }
 
-const mySum2 = function () {
-    const args = [...arguments];
-    let result = 0;
-
-    args.forEach(item => {
-        result += item;
-    });
-    return result;
+const mySum2 = function (firstNumber, secondNumber) {
+    return firstNumber + secondNumber;
 };
 
-console.log(mySum(1, 2, 3, 4, 5));
-console.log(mySum2(3, 4, 5, 6, 7));
+const mySum3 = (firstNumber, secondNumber) => {
+    return firstNumber + secondNumber;    
+}
+
+const mySum4 = {
+    sum: function (firstNumber, secondNumber) {
+        return firstNumber + secondNumber;    
+    }
+};
+
+function* mySum5Generator(firstNumber, secondNumber) {
+    return firstNumber + secondNumber;    
+}
+const myGeneratorFunction = mySum5Generator(2, 2);
+
+console.log(myGeneratorFunction.next().value); 
+
+const mySum6 = new Function('firstNumber', 'secondNumber', 
+    'return firstNumber + secondNumber'
+ );
+
+ console.log(mySum6(4, 4));
 // 1. Create self-invoked anonymous function, that will return if the day after tomorrow is odd, or even.
 // HINT: function accepts one argument: new Date(); 
 // output example 15.06.2021, 11:19:22 is odd date
