@@ -27,9 +27,8 @@ console.log(myGeneratorFunction.next().value);
 
 const mySum6 = new Function('firstNumber', 'secondNumber', 
     'return firstNumber + secondNumber'
- );
+);
 
- console.log(mySum6(4, 4));
 // 1. Create self-invoked anonymous function, that will return if the day after tomorrow is odd, or even.
 // HINT: function accepts one argument: new Date(); 
 // output example 15.06.2021, 11:19:22 is odd date

@@ -43,19 +43,19 @@ const getUsersAsync = async () => {
     }    
 };
 
-// getUsersAsync();
+getUsersAsync();
 
 /**
  *  2. Add another request to url - https://jsonplaceholder.typicode.com/comments.
  *  Make two requests, and return all values
  *  Hint: Promise.all
  * */
-// Promise.all([users, comments]).then((data) => {
-//         console.log(data);
-//     })
-//     .catch((error) => {
-//         throw new Error(error);
-//     });
+Promise.all([users, comments]).then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        throw new Error(error);
+    });
 
 
 /**
@@ -78,7 +78,7 @@ Promise.race([users, comments]).then((data) => {
  * 4. Read about Promice.any
  * Try to use it on previous two requests
  */
- Promise.any([users, comments]).then((data) => {
+Promise.any([users, comments]).then((data) => {
     if (data.body) {
         console.log('Comments win!');
     } else {
